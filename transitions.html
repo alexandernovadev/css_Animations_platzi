@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+</head>
+
+<style>
+    .pelota{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: blueviolet;
+        /* Que quiere animar ?, Si no le ponemos esta, anima Todos los elementos*/
+        transition-property: width, height;
+
+        /* Cuanto va a durar*/
+        transition-duration: 1s;
+
+        /* Espera x time antes de que comienze la animación */
+        transition-delay: 0.1s;
+
+        /* Tipo de animacion (hay linear, ease etc)  sucede en una escala cartesiana
+        Por defecto tiene ease*/
+        
+        transition-timing-function: ease;
+
+        /* Se puede animar todo en una solo linea
+        transition --> ancho duraciion delay fuctiontype*/
+
+        /* transition: width 1s 1s ease; */
+    }
+    .pelota:hover{
+        width: 180px;
+        height: 180px;
+    }
+</style>
+<body>
+    <h3>Animacion de Pelota con transitions</h3>
+    <div class="pelota b"></div>
+</body>
+</html>
