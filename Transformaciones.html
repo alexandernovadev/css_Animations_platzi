@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transformaciones CSS</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    .pelota {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      transition: 1s;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .pelota.a {
+      background:#ef5350;
+      left: 0;
+    }
+
+    .pelota.b {
+      background: #26a69a;
+      right: 0;
+    }
+    .canasta {
+      border: 1px solid red;
+      position: relative;
+      height: 100px;
+      width: 100%;
+      /* Podemos transformar elemtnos asi: 
+      Rotar rotate() | sesgar skew() | change position | changue size*/
+      transition: 1s;
+    }
+    .canasta:hover{
+      transform: rotate(5deg) skew(40deg) translate(100px) scale(2,3);
+    }
+    .canasta:hover .pelota.a {
+      left: calc(50% - 100px);
+    }
+    .canasta:hover .pelota.b {
+      right: calc(50% - 100px);
+    }
+
+  </style>
+</head>
+<body>
+    <h3>Transfomaciones</h3>
+    <div class="canasta">
+        <div class="pelota a">Hola</div>
+        <div class="pelota b">MARTE!</div>
+    </div>
+</body>
+</html>

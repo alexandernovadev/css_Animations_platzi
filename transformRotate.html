@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Transform</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        border: 1px dotted brown;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    /* .container:hover .square {
+        /* Si ponemos los grados negativos, gira al contrario de la agijas del watch */
+        /* transform: rotate(-45deg); */
+
+        /* Podemos girar en X Y Z */
+        /* transform: rotateZ(-180deg); */
+        /* transform: rotateX(60deg); 
+    } */
+    .container:hover .squareZ {
+        transform: rotateZ(-199deg);
+    }   
+    .container:hover .squareY {
+        transform: rotateY(80deg);
+    }   
+    .container:hover .squareX {
+        transform: rotateX(110deg);
+    }
+    .container:hover .square3D {
+        /* Se puede rotar en todos los angualos nested rotates */
+        transform: rotateX(110deg) rotateY(150deg) rotateZ(10deg);
+
+        /* Esto de arriba tambien se puede hacer mas easy asi: */
+        /* transform: rotate3D(x,y,x,GRADOS); */
+        transform: rotate3D(1,1,1,10deg);
+    }
+    .squareZ, .squareY, .squareX,  .square3D {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        background: violet;
+        border-radius: 10px;
+        margin: 20px;
+        transition: 0.4s;
+    }
+
+    .contenedorpadre{
+        position: relative;
+    }
+    .contenedorpadre:active .cara1{
+        transform: rotateY(-0deg) ;
+        z-index: 2;
+    }
+    .contenedorpadre:active .cara2{
+        transform: rotateY(180deg);
+    }
+    .cara1{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background: rgb(201, 198, 17);
+        border-radius: 10px;
+        transition: 0.8s;
+        transform: rotateY(180deg) ;
+    }
+    .cara2{
+        position: absolute;
+        width: 100px;
+        height: 100px;      
+        background: rgb(130, 146, 238);
+        border-radius: 10px;  
+        transition: 0.8s;
+     
+    }
+</style>
+<body>
+    <h3>Rotaciones</h3>
+    <div class="container">
+        <div class="squareX"> Marte X</div>
+        <div class="squareY"> Marte Y</div>
+        <div class="squareZ"> Marte Z</div>
+        <div class="square3D"> Marte 3D</div>
+    </div>
+    
+</body>
+<div class="contenedorpadre">
+    <div class="cara1"> Cara 1</div>
+    <div class="cara2"> cara 2</div>
+</div>
+</html>
