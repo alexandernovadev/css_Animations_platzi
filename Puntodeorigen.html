@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Transform</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        border: 1px dotted brown;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .container:hover .square {
+       /*Existe un punto de origen que es el centro, que es el default transform-origin; 50% 50%
+       pero puedo cambiarlo a top left o como quierea */
+       
+       transform: rotate(10deg);
+
+    }   
+    .square{
+        transform-origin: left top;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        background: rgb(238, 170, 130);
+        padding: 50px;
+        border-radius: 10px;
+        margin: 20px;
+        transition: 0.4s;
+    }
+
+</style>
+<body>
+    <h3 style="margin-right: 20px;">Sesgar o Deformar </h3>
+    <div class="container">
+        <div class="square"> Marte X</div>
+    </div>
+    
+</body>
+
+</html>

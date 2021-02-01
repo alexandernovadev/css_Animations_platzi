@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Transform</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        border: 1px dotted brown;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .container:hover .square {
+       /*Para escalar es transform: scale(x,y)
+       Para escalar son solo es numeros reales, no sirve ni px ni rem ni nada :D
+
+       OJO de 0 a 1 se vuelve pequeño 
+       de 1 a 2 se vuelve grande
+       */
+       /* transform: scale(100px); ESTO NO SIRVE PARA NADA */
+       transform: scale(1.5,.3);
+
+    }   
+    .square{
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        background: rgb(238, 170, 130);
+        padding: 50px;
+        border-radius: 10px;
+        margin: 20px;
+        transition: 0.4s;
+    }
+
+</style>
+<body>
+    <h3 style="margin-right: 20px;">Escalar </h3>
+    <div class="container">
+        <div class="square"> Marte X</div>
+    </div>
+    
+</body>
+
+</html>
