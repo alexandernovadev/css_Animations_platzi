@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Transform</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+        display: flex;
+        border: 1px dotted brown;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100vw;
+    }
+
+    .container:hover .square {
+        animation-play-state: paused;
+    }   
+    .square{
+        display: flex;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        background: rgb(238, 170, 130);
+        padding: 50px;
+        /* border-radius: 10px; */
+        margin: 20px;
+        transition: 0.4s;
+        /*Sintaxis de animaciones*/
+        animation-name: cuadrado;
+        animation-duration: 1s;
+
+        animation-iteration-count: infinite; /* CUantas veces se repite*/
+        /* animation-delay: 1s; Se demora un segundo antes de que comienze */
+
+        /* Puedo decirle que comienze de atras hacia adelante*/
+        /* animation-direction: tambien funcioa backward */
+        /* animation-direction: alternate; Reobre de 0 a  100  y de 100 a */
+        animation-direction: alternate; 
+
+        /* Cuando termine la animacion como quiere que quede ??
+        
+        backwards: Es en 100% en el ultimo
+        o forwards En 0% the first */
+        /* animation-fill-mode: backwards; */
+
+        /* Puedo decirle en que estado esta mi animacion 
+        por defecto de running pero le puedo decir que este en paused
+        OJO : Creo que con esto se juega con el JS*/
+        /* animation-play-state: paused; */
+
+
+        /*Animacion por pasos o tantos frames por segundo*/
+        /* animation-timing-function: ease-in-out; */
+        /* animation-timing-function: steps(10); */
+
+        /*Curva de bezier es hacer la curva como yo quiera
+        por defecto ease ease-in etc, tienen una curva que es bonita y suave
+        pero si quiero hacer mi propia curva puedo utilizar la curva de bezier*/
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+        position: relative;
+    }    
+    @keyframes cuadrado {
+        /* Puedo colocarlos con from to
+        o colocalr porcentanjes de 0% a 100% */
+        0%{
+            left: 0;
+        }
+        100%{
+            left: calc(100% - 320px);
+        }
+    }
+    
+
+</style>
+<body>
+    <h3 style="margin-right: 20px;">Sesgar o Deformar </h3> <br>
+    <div class="container">
+        <div class="square"> Marte X</div>
+    </div>
+    
+</body>
+
+</html>
