@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Twitter Like</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .like {
+      cursor: pointer;
+      /*width: 100px;
+      height: 100px;*/
+      width: 50px;
+      height: 50px;
+      background-image: url('sprite__corazon.png');
+      /*background-size: x y;*/
+      background-size: 1450px 40px;
+      /*background: red;*/
+
+    }
+    .hola {
+      cursor: pointer;
+      /*width: 100px;
+      height: 100px;*/
+      width: 50px;
+      height: 50px;
+      background-image: url('hola.png');
+      /*background-size: x y;*/
+      background-size: 500px 50px;
+      /*background: red;*/
+    }
+
+    .hola{
+      width: 50px;
+      height: 72px;
+      background-image : url(http://i.imgur.com/xtk0SCC.png);
+      animation: moveX 3s linear forwards;
+    }
+    @keyframes moveX{
+      from{background-position-x:0px;}
+      to{background-position-x:-450px;}
+    }
+
+    .like.is-liked {
+      animation-name: like;
+      /*animation-duration: 800ms;*/
+      animation-duration: .8s;
+      /*2900 / 29 = 100px*/
+      animation-timing-function: steps(28);
+      /*background-position: -2800px 0;*/
+      /*background-position: right;*/
+      animation-fill-mode: forwards;
+    }
+    @keyframes like {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: right;
+        /*background-position: -2800px 0;*/
+      }
+    }
+  </style>
+<body>
+  <div class="tweet-box">
+    <div class="like" id="like"></div>
+</div>
+<div class="hola" id="hola"></div>
+  <script>
+    const $like = document.getElementById('like');
+    $like.addEventListener('click', (event)=>{
+      // console.log(event);
+      // $like.classList.add('is-liked');
+      $like.classList.toggle('is-liked');
+    });
+ 
+  </script>
+</html>
